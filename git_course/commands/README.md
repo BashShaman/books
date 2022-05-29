@@ -4,35 +4,35 @@
 
 ### Examples
 
-1.  `C user.name {{name}}`
+1.  `git config user.name <name>`
 
     Set the name of the user.
      
-1.  `C user.email {{email}}`
+1.  `git config user.email <email>`
 
     Set the email of the user.
     
-1.  `C core.editor {{path-to-the-editor}}`
+1.  `git config core.editor <path-to-the-editor>`
 
     Set the editor to use with Git.
     
-1.  `C --global alias.c config`
+1.  `git config --global alias.c config`
 
     Set the alias to the `config` parameter and add it to the global configuration file.
     
-1.  `C alias.echo '!echo "Hello!"; echo "Hi!"'`
+1.  `git config alias.echo '!echo "Hello!"; echo "Hi!"'`
 
     Use '!' prefix to bind a shell command (or a sequence) with an alias.
 
-1.  `C -l, --list`
+1.  `git config -l, --list`
 
     List configurations from all configuration files.
 
-1.  `C -h`
+1.  `git config -h`
 
     Get the list of options with short descriptions.
     
-1.  `C --unset {{option}}`
+1.  `git config --unset <option>`
 
     Remove an option from the configuration file.
     
@@ -88,25 +88,3 @@
     * GIT_COMMITTER_NAME
     * GIT_COMMITTER_EMAIL
     * GIT_COMMITTER_DATE
-    
-### Remarks
-
-1. ./.git/config
-
-    Path to the file with local configurations.  
-    These are configurations for a particular repository.  
-    Use the flag `--local` to set or don't use any flag at all (default value).
-    
-1. ~/.gitconfig
-
-    Path to the file with global configurations.  
-    These are configurations for all repositories of the user.  
-    Use flag `--global` to set.
-    
-1. /etc/gitconfig
-
-    Path to the file with system configurations.
-    These are configurations for all users of the system.  
-    Use flag `--system` to set.
-    
- 1.  Search order for a particular configuration: local -> global -> system.
