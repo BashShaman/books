@@ -2,8 +2,6 @@
 
 ## `git config`
 
-### Examples
-
 1.  `git config user.name <name>`
 
     Set the name of the user.
@@ -59,6 +57,10 @@
 
     Make a file from the ignored directory tracked.
     
+1.  `git add -p <filepath>`
+
+    Choose a hunk to commit manually. Git allows to choose what should be commited inside a file.
+    
  ## `git show`
  
 1. `git show <commit-id>`
@@ -69,13 +71,8 @@
 
     Get the information about the commiter in addition to the result of the command.
     
-  ## Miscellaneous
-   
-1. `git update-index --chmod=+x <filename>`
+## `git commit`
 
-    Add permissions to be executed to the index copy of a file.  
-    The copy of the file inside working tree won't be changed.
-    
 1. `git commit --author='John Doe <johndoe@gmail.com>' --date='Sun May 29 11:09:20 2022 +0700'`
 
     Set the author and the date of the commit.
@@ -88,3 +85,45 @@
     * GIT_COMMITTER_NAME
     * GIT_COMMITTER_EMAIL
     * GIT_COMMITTER_DATE
+
+1. `git commit -a, -all`
+
+    Add all modified tracked files to the index and commit them in one step.
+    
+1. `git commit -am <commit-message>`
+
+    As the previous one but allows to add quick heading for a commit.
+    
+1.  `git commit -m <message> <fiepath> ...`
+
+    Add only a particular modified tracked file/files to a commit.
+    
+1.  `git config --global alias.commitall '!git add .; git commit'`
+
+    Useful alias which allow to index all new files and add changes to modified files to a commit.  
+    After that the commit is performed.
+
+## Miscellaneous
+   
+1. `git update-index --chmod=+x <filename>`
+
+    Add permissions to be executed to the index copy of a file.  
+    The copy of the file inside working tree won't be changed.
+    
+1. `git rm <filename>`
+
+    Remove a file/files from the current working tree and record it in the index.
+    
+1. `git rm -r <dirname>`
+
+    Remove a directory/directories from the current working tree and record it in the index.
+    
+1. `git rm --cached <filename>`
+
+    Remove a file from the index (make it untracked) but leave the copy inside the working tree untouched.  
+    Is useful if a file/files was added to the index by a mistake and should be saved only inside the tree,  
+    after adding them to `.gitignore`.
+    
+1. `git mv <filename>`
+
+    Rename or move a file and add the action to the index.
