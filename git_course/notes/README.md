@@ -12,3 +12,23 @@
     
 1.  Git doesn't see empty directories. So an empty directory cannot be added to index or committed.  
     Put an empty `.gitkeep` file to make an empty directory visible to Git.
+
+1.  `./.git/config`
+
+    Path to the file with local configurations.  
+    These are configurations for a particular repository.  
+    Use the flag `--local` to set or don't use any flag at all (default value).
+    
+1. ` ~/.gitconfig`
+
+    Path to the file with global configurations.  
+    These are configurations for all repositories of the user.  
+    Use flag `--global` to set.
+    
+1.  `/etc/gitconfig`
+
+    Path to the file with system configurations.
+    These are configurations for all users of the system.  
+    Use flag `--system` to set.
+    
+1.  Search order for a particular configuration: local -> global -> system.
