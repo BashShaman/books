@@ -1,6 +1,6 @@
 # Commands
 
-## `git config [<options>]`
+## `git config`
 
 ### Examples
 
@@ -40,16 +40,27 @@
 
     Get detailed inforamion about the `config` parameter.
     
-1. `git update-index --chmod=+x <filename>`
-
-    Add permissions to be executed to the index copy of a file.  
-    The copy of the file inside working tree won't be changed.
-
-1. `git add --chmod=+x <filename>`
+ ## `git add`
+ 
+ 1. `git add --chmod=+x <filename>`
 
     Add a file to the index and make the copy in index executable at the same time.  
     The copy inside the working tree won't be changed.
     
+1.  `git add .`
+
+    Add to the index all changes inside current directory.
+    
+1. `git add -A`
+
+    Add all changes inside the working tree to the index regardless of the position inside the tree.
+    
+1.  `git add -f, --force <filepath>`
+
+    Make a file from the ignored directory tracked.
+    
+ ## `git show`
+ 
 1. `git show <commit-id>`
 
     Get the information about the commit by the id or the part of the id (at least 4 characters).
@@ -57,6 +68,13 @@
 1. `git show <commit-id> --pretty=fuller`
 
     Get the information about the commiter in addition to the result of the command.
+    
+  ## Miscellaneous
+   
+1. `git update-index --chmod=+x <filename>`
+
+    Add permissions to be executed to the index copy of a file.  
+    The copy of the file inside working tree won't be changed.
     
 1. `git commit --author='John Doe <johndoe@gmail.com>' --date='Sun May 29 11:09:20 2022 +0700'`
 
@@ -70,18 +88,6 @@
     * GIT_COMMITTER_NAME
     * GIT_COMMITTER_EMAIL
     * GIT_COMMITTER_DATE
-
-1.  `git add .`
-
-    Add to the index all changes inside current directory.
-    
-1. `git add -A`
-
-    Add all changes inside the working tree to the index regardless of the position inside the tree.
-    
-1.  `git add -f, --force <filepath>`
-
-    Make a file from the ignored directory tracked.
     
 ### Remarks
 
